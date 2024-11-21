@@ -7,7 +7,6 @@ import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import java.util.Collection;
 import java.util.List;
 
-import com.emsi.blog.user.Role;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.Enumerated;
