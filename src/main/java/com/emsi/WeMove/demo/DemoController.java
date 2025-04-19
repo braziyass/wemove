@@ -1,4 +1,4 @@
-package com.emsi.blog.demo;
+package com.emsi.WeMove.demo;
 
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;

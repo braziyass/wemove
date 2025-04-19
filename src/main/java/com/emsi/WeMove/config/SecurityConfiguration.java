@@ -1,4 +1,4 @@
-package com.emsi.blog.config;
+package com.emsi.WeMove.config;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -30,6 +30,7 @@ public class SecurityConfiguration {
             // Configure authorization rules
             .authorizeHttpRequests(auth -> auth
                 .requestMatchers("/auth/**").permitAll() // Adjust with your public endpoints
+                .requestMatchers("/api/offre/**").authenticated()
                 .anyRequest().authenticated())
             
             // Add custom authentication provider and filter

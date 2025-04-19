@@ -1,4 +1,4 @@
-package com.emsi.blog.auth;
+package com.emsi.WeMove.auth;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -15,5 +15,6 @@ public class RegisterRequest {
     private String lastName;
     private String email;
     private String password;
+    private String role;
 
 }

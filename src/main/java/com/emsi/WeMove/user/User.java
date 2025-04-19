@@ -1,4 +1,4 @@
-package com.emsi.blog.user;
+package com.emsi.WeMove.user;
 
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.GrantedAuthority;

@@ -1,4 +1,4 @@
-package com.emsi.blog.auth;
+package com.emsi.WeMove.auth;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;

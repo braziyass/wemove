@@ -1,6 +1,6 @@
 spring:
   datasource:
-    url: jdbc:postgresql://localhost:5432/blog
+    url: jdbc:postgresql://localhost:5432/wemove
     username: postgres
     password: yassine2004
     driver-class-name: org.postgresql.Driver

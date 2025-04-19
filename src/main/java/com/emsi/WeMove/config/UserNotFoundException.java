@@ -1,4 +1,4 @@
-package com.emsi.blog.config;
+package com.emsi.WeMove.config;
 
 public class UserNotFoundException {
 
