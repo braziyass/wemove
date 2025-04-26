@@ -69,6 +69,24 @@ public class OffreService {
         return toOffreDTO(offre);
     }
 
+    public OffreDTO reserverOffre(Integer id, String token) {
+        User user = getUserFromToken(token);
+        Offre offre = offreRepository.findById(id).orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND, "Offer not found"));
+
+        if (user.getRole().equals(Role.PUSER) || user.getRole().equals(Role.ADMIN)) {
+            offre.setNombreDePlace(offre.getNombreDePlace() - 1);
+            if (offre.getNombreDePlace() < 0) {
+                throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "No more places available");
+            }
+            offreRepository.save(offre);
+            return toOffreDTO(offre);  
+        }
+        else {
+            throw new ResponseStatusException(HttpStatus.FORBIDDEN, "You are not allowed to create an offer");
+        }
+        
+    }
+
 
     private OffreDTO toOffreDTO(Offre offre) {
         return new OffreDTO(

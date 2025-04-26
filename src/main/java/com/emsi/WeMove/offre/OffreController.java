@@ -42,6 +42,13 @@ public class OffreController {
         return ResponseEntity.ok(offreDTO);
     }
 
+    @GetMapping("/{Id}/reserver")
+    public ResponseEntity<OffreDTO> reserverOffre(@PathVariable Integer Id, HttpServletRequest request) {
+        String token = extractToken(request);
+        OffreDTO offreDTO = service.reserverOffre(Id, token);
+        return ResponseEntity.ok(offreDTO);
+    }
+
 
 
     private String extractToken(HttpServletRequest request) {
