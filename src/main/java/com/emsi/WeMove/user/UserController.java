@@ -2,6 +2,7 @@ package com.emsi.WeMove.user;
 
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -22,16 +23,20 @@ public class UserController {
         UserDTO userDTO = userService.myProfile(token);
         return ResponseEntity.ok(userDTO);
     }
-    @GetMapping("/update")
+    @PostMapping("/update")
     public ResponseEntity<UserDTO> updateMe(User user, HttpServletRequest request) {
         String token = extractToken(request);
         UserDTO userDTO = userService.updateMe(user, token);
         return ResponseEntity.ok(userDTO);
     }
-    @GetMapping("/delete")
-    public UserDTO deleteMe(String token) {
-        return userService.deleteMe(token);
-    }
+
+    // Uncomment this method if you want to implement the delete functionality
+    // @GetMapping("/delete")
+    // public UserDTO deleteMe(HttpServletRequest request) {
+    //     String token = extractToken(request);
+
+    //     return userService.deleteMe(token);
+    // }
     @GetMapping("/{id}")
     public UserDTO getUserById(Integer id) {
         return userService.getUserById(id);
