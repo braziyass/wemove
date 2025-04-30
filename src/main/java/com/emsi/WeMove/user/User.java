@@ -25,6 +25,7 @@ public class User implements UserDetails {
     private Integer id;
     private String firstName;
     private String lastName;
+    private String username;
     private String email;
     private String password;
     @Enumerated(jakarta.persistence.EnumType.STRING)

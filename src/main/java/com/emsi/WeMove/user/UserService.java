@@ -16,7 +16,7 @@ public class UserService {
     private final UserRepository userRepository;
     
 
-    public UserDTO getUserById(Integer id) {
+    public UserDTO getUserByUsername(Integer id) {
         User user = userRepository.findById(id).orElseThrow(() -> new RuntimeException("User not found"));
         return toUserDTO(user);
     }

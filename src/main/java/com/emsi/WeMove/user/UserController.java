@@ -37,9 +37,11 @@ public class UserController {
 
     //     return userService.deleteMe(token);
     // }
-    @GetMapping("/{id}")
-    public UserDTO getUserById(Integer id) {
-        return userService.getUserById(id);
+
+    @GetMapping("/{username}")
+    public ResponseEntity<UserDTO> getUserById(String username) {
+        // return userService.getUserById(id);
+        return null;
     }
 
 
