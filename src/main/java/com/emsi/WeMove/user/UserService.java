@@ -50,33 +50,14 @@ public class UserService {
 
     private UserDTO toUserDTO(User user) {
 
-        if (user.getRole() == Role.CUSER) {
+        
             return new UserDTO(
             user.getFirstName(), 
             user.getLastName(), 
             user.getEmail(), 
             // user.getPassword(), 
-            "conducteur");
-        }
-        else if (user.getRole() == Role.PUSER) {
-            return new UserDTO(
-            user.getFirstName(), 
-            user.getLastName(), 
-            user.getEmail(), 
-            // user.getPassword(), 
-            "passager");
-        }
-        else if (user.getRole() == Role.ADMIN) {
-            return new UserDTO(
-            user.getFirstName(), 
-            user.getLastName(), 
-            user.getEmail(), 
-            // user.getPassword(), 
-            "admin");
-        }
-        else {
-            return null;
-        }
+            user.getRole());
+        
 
         
     }

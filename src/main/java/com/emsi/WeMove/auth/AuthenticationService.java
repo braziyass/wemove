@@ -33,10 +33,6 @@ public class AuthenticationService {
             
         }
 
-        if (repository.findByUsername(request.getUsername()).isPresent()) {
-            throw new EmailAlreadyExistsException("Username already exists");
-        }
-
         if (request.getRole() == null) {
             throw new NoUserRoleProvidedException("No role provided");
         }
@@ -46,7 +42,6 @@ public class AuthenticationService {
                 User user = User.builder()
                     .firstName(request.getFirstName())
                     .lastName(request.getLastName())
-                    .username(request.getUsername())
                     .email(request.getEmail())
                     .password(passwordEncoder.encode(request.getPassword()))
                     .role(Role.CUSER)
@@ -62,7 +57,6 @@ public class AuthenticationService {
                 User user = User.builder()
                     .firstName(request.getFirstName())
                     .lastName(request.getLastName())
-                    .username(request.getUsername())
                     .email(request.getEmail())
                     .password(passwordEncoder.encode(request.getPassword()))
                     .role(Role.PUSER)

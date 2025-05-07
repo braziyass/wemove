@@ -29,8 +29,7 @@ public class SecurityConfiguration {
             
             // Configure authorization rules
             .authorizeHttpRequests(auth -> auth
-                .requestMatchers("/auth/**").permitAll() // Adjust with your public endpoints
-                .requestMatchers("/api/offre/**").authenticated()
+                .requestMatchers("/auth/**").permitAll() // Allow all requests to /auth/**
                 .anyRequest().authenticated())
             
             // Add custom authentication provider and filter
